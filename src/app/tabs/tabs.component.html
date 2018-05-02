@@ -1,3 +1,4 @@
+<div class="container">
 <ul class="nav">
 
   <li class="nav-item" [ngClass]="{active : chosenSide === 'all'}">
@@ -15,3 +16,4 @@
 </ul>
 
 <app-list [characters]="getCharacters()" (sideAssigned)="onSideAssigned($event)"></app-list>
+</div>
