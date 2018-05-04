@@ -1,19 +1,18 @@
-
-
-
 export class StarWarsService {
 
-  private characters;
+  private characters = [
+    {name: 'Luke Skywalker', side: 'Light'},
+    {name: 'Darth Vader', side: 'Dark'}
+  ];
 
-
-  onSideAssigned(charInfo) {
+  assignSide(charInfo) {
     const pos = this.characters.findIndex( (char) => {
       return char.name === charInfo.name;
     });
     this.characters[pos].side = charInfo.side;
   }
 
-  getCharacters(charInfo, chosenSide) {
+  getCharacters(chosenSide) {
     if (chosenSide === 'all') {
       return this.characters;
     }
