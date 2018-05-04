@@ -9,7 +9,7 @@ import { StarWarsService } from '../services/Starwars.service';
 export class ItemComponent implements OnInit {
 
   @Input() character;
-  swService;
+  swService: StarWarsService;
 
   constructor(swService: StarWarsService) {
     this.swService = swService;

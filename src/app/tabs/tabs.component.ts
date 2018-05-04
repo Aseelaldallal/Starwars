@@ -10,7 +10,7 @@ import { StarWarsService } from '../services/Starwars.service';
 export class TabsComponent implements OnInit {
 
   chosenSide = 'all';
-  swService;
+  swService: StarWarsService;
 
   constructor(swService: StarWarsService) {
     this.swService = swService;
