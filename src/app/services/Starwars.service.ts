@@ -1,3 +1,9 @@
+import { LogService } from './log.service';
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+
 export class StarWarsService {
 
   private characters = [
@@ -5,11 +11,18 @@ export class StarWarsService {
     {name: 'Darth Vader', side: 'Dark'}
   ];
 
+  logService: LogService;
+
+  constructor(lgServ: LogService) {
+    this.logService = lgServ;
+  }
+
   assignSide(charInfo) {
     const pos = this.characters.findIndex( (char) => {
       return char.name === charInfo.name;
     });
     this.characters[pos].side = charInfo.side;
+    this.logService.log('Assigned ' + this.characters[pos].name + ' to side ' + charInfo.side);
   }
 
   getCharacters(chosenSide) {
