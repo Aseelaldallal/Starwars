@@ -37,11 +37,10 @@ export class StarWarsService {
     const pos = this.characters.findIndex(char => {
       return char.name === name;
     });
-    console.log(pos);
     if(pos !== -1) {
       return;
     }
     this.characters.push({name: name, side: side});
-    console.log(this.characters);
+    this.logService.log('Created character: ' + name);
   }
 }
