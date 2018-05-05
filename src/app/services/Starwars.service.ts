@@ -32,4 +32,14 @@ export class StarWarsService {
       return char.side === chosenSide;
     });
   }
+
+  createCharacter(name, side) {
+    const pos = this.characters.findIndex(char => {
+      return char.name === name;
+    });
+    if(pos === -1) {
+      return;
+    }
+    this.characters.push({name: name, side: side});
+  }
 }
