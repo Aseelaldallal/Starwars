@@ -1,6 +1,6 @@
 import { LogService } from './log.service';
-
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 
@@ -9,8 +9,8 @@ export class StarWarsService {
     { name: 'Luke Skywalker', side: 'Light' },
     { name: 'Darth Vader', side: 'Dark' }
   ];
-
-  logService: LogService;
+  private logService: LogService;
+  public charactersChanged = new Subject<void>();
 
   constructor(lgServ: LogService) {
     this.logService = lgServ;
@@ -21,6 +21,7 @@ export class StarWarsService {
       return char.name === charInfo.name;
     });
     this.characters[pos].side = charInfo.side;
+    this.charactersChanged.next();
     this.logService.log('Assigned ' + this.characters[pos].name + ' to side ' + charInfo.side);
   }
 
