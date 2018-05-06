@@ -25,6 +25,7 @@ export class StarWarsService {
   }
 
   getCharacters(chosenSide) {
+    console.log('GETTING CHARACTERS: ', chosenSide);
     if (chosenSide === 'all') {
       return this.characters;
     }

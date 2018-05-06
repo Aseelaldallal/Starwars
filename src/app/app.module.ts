@@ -13,8 +13,11 @@ import { HeaderComponent } from './header/header.component';
 
 
 const routes = [
-  {path: 'character', component: TabsComponent},
-  {path: 'character/new', component: CreateCharacterComponent},
+  {path: 'character', component: TabsComponent, children: [
+    {path: '', redirectTo: 'all', pathMatch: 'full'},
+    {path: ':side', component: ListComponent}
+  ]},
+  {path: 'new', component: CreateCharacterComponent},
   {path: '**', redirectTo: '/character'}
 ];
 
