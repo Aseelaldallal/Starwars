@@ -14,7 +14,7 @@ import { HeaderComponent } from './header/header.component';
 
 const routes = [
   {path: 'character', component: TabsComponent},
-  {path: 'new', component: CreateCharacterComponent},
+  {path: 'character/new', component: CreateCharacterComponent},
   {path: '**', redirectTo: '/character'}
 ];
 
