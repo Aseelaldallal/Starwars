@@ -26,7 +26,7 @@ export class StarWarsService {
 
   getCharacters(chosenSide) {
     if (chosenSide === 'all') {
-      return this.characters;
+      return this.characters.slice();
     }
     return this.characters.filter(char => {
       return char.side === chosenSide;
