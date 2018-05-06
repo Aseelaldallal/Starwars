@@ -9,6 +9,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { StarWarsService } from './services/Starwars.service';
 import { LogService } from './services/log.service';
 import { CreateCharacterComponent } from './create-character/create-character.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes = [
   { path: 'characters', component: TabsComponent, children: [
@@ -25,7 +26,8 @@ const routes = [
     ItemComponent,
     ListComponent,
     TabsComponent,
-    CreateCharacterComponent
+    CreateCharacterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
